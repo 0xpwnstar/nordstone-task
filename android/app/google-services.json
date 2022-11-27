@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "374244985988",
+    "project_id": "nordstone-task-69e83",
+    "storage_bucket": "nordstone-task-69e83.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:374244985988:android:30516f869eaba5c97486d1",
+        "android_client_info": {
+          "package_name": "com.nordstone"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "374244985988-03n29favdm8n8nuu9fppl5fvrbfol3r3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB9Yzd0xzTzKlS-RTwLfjwP4Lu7r6f4ouQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "374244985988-03n29favdm8n8nuu9fppl5fvrbfol3r3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:374244985988:android:e35b55f42a96c0ed7486d1",
+        "android_client_info": {
+          "package_name": "com.task"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "374244985988-03n29favdm8n8nuu9fppl5fvrbfol3r3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB9Yzd0xzTzKlS-RTwLfjwP4Lu7r6f4ouQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "374244985988-03n29favdm8n8nuu9fppl5fvrbfol3r3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

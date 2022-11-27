@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Text } from 'react-native';
+import Providers from './src/navigation';
 import SplashScreen from "react-native-splash-screen";
 
 
@@ -10,7 +10,7 @@ const App = () => {
   }, []);
 
   return (
-    <Text>chaitu</Text>
+    <Providers />
   );
 };
 export default App;
