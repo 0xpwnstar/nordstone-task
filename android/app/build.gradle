@@ -256,11 +256,16 @@ dependencies {
     
     implementation fileTree(dir: "libs", include: ["*.jar"])
 
+    implementation project(':react-native-push-notification')
+
+    implementation 'com.google.firebase:firebase-analytics:17.3.0'
 
     //noinspection GradleDynamicVersion
     implementation "com.facebook.react:react-native:+"  // From node_modules
 
     implementation 'com.google.firebase:firebase-auth'
+    implementation 'com.google.firebase:firebase-storage'
+    implementation 'com.google.firebase:firebase-firestore'
 
     implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.0.0"
 

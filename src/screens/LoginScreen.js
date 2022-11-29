@@ -1,16 +1,18 @@
 import React, { useState, useContext } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import FormInput from '../components/FormInput';
+import FormButton from '../components/FormButton';
 import { AuthContext } from '../navigation/AuthProvider'
 
 
 export default function LoginScreen({ navigation }) {
     const [email, setEmail ] = useState('');
     const [password, setPassword] = useState('');
+    const { login } = useContext(AuthContext);
     return (
         <View style={styles.container}>
             <Text style = {styles.text}>
-                Welcome to firebase app
+                Welcome to Nordstone Task 
             </Text>
             <FormInput 
                 value={email}
@@ -20,6 +22,21 @@ export default function LoginScreen({ navigation }) {
                 keyboardType='email-address'
                 autoCorrect={false}
             />
+            <FormInput
+                value={password}
+                placeholderText='Password'
+                onChangeText={userPassword => setPassword(userPassword)}
+                secureTextEntry={true}
+            />
+            <FormButton buttonTitle='Login' onPress={() => login(email, password)} />
+            <TouchableOpacity
+                style={styles.text}
+                onPress={()=>navigation.navigate('Signup')}
+            >
+              <Text style={styles.navButtonText}>New user? Join here</Text>
+            </TouchableOpacity>
+
+
         </View>
     )
 }
@@ -33,13 +50,16 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: 24,
-    marginBottom: 10
+    marginBottom: 15
   },
   navButton: {
-    marginTop: 15
+    marginTop: 15,
+    marginBottom: 15
   },
   navButtonText: {
-    fontSize: 20,
-    color: '#6646ee'
+    fontSize: 22,
+    marginTop: 15,
+    color: '#6646ee',
+    marginBottom: 15
   }
 });

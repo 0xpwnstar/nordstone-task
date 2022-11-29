@@ -2,9 +2,9 @@ import React, { createContext, useState } from 'react';
 import auth from '@react-native-firebase/auth';
 
 
-export const AuthContext = createContext({});
+export const AuthContext = createContext();
 
-export const AuthProvider = ({ children }) => {
+export const AuthProvider = ({ children,...props }) => {
     const [user, setUser] = useState(null);
 
     return (
@@ -18,6 +18,20 @@ export const AuthProvider = ({ children }) => {
                     } catch (e) {
                         console.log(e);
                     }
+                },
+                register: async (email,password) => {
+                    try {
+                        await auth().createUserWithEmailAndPassword(email, password);
+                    } catch (e) {
+                        console.log(e)                       
+                    }
+                },
+                logout: async () => {
+                    try {
+                      await auth().signOut();
+                    } catch (e) {
+                      console.error(e);
+                    }
                 }
             }}
         >
@@ -26,3 +40,5 @@ export const AuthProvider = ({ children }) => {
 
     )
 }
+
+
