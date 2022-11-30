@@ -8,6 +8,9 @@ export default function SignupScreen() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const { register } = useContext(AuthContext);
+  const [error, setError ] = useState('');
+
+
   return (
     <View style={styles.container}>
       <Text style={styles.text}>Create an account</Text>
@@ -24,14 +27,19 @@ export default function SignupScreen() {
         placeholderText='Password'
         onChangeText={userPassword => setPassword(userPassword)}
         secureTextEntry={true}
-      />
+      />{
+        email && password &&
       <FormButton
         buttonTitle='Signup'
-        onPress={() => register(email, password)}
+        onPress={() => register(email, password).then(res => res != "Ok" ? setError(res) : console.log("gg"))}
       />
+      }
+      {error &&
       <Text style={styles.text}>
-
+        Use a strong password!
+            Format email correctly!
       </Text>
+      } 
     </View>
   );
 }

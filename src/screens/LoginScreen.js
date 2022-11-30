@@ -9,6 +9,7 @@ export default function LoginScreen({ navigation }) {
     const [email, setEmail ] = useState('');
     const [password, setPassword] = useState('');
     const { login } = useContext(AuthContext);
+    const [error, setError ] = useState('');
     return (
         <View style={styles.container}>
             <Text style = {styles.text}>
@@ -28,13 +29,25 @@ export default function LoginScreen({ navigation }) {
                 onChangeText={userPassword => setPassword(userPassword)}
                 secureTextEntry={true}
             />
-            <FormButton buttonTitle='Login' onPress={() => login(email, password)} />
+            {email && password &&
+            <FormButton buttonTitle='Login' onPress={() =>
+              login(email, password).then(res => res != "Ok" ? setError(res) : console.log("gg"))}
+            />
+            }
             <TouchableOpacity
                 style={styles.text}
                 onPress={()=>navigation.navigate('Signup')}
             >
               <Text style={styles.navButtonText}>New user? Join here</Text>
             </TouchableOpacity>
+            <View>
+        {
+          error && <Text style={{color:'black', fontSize:28}}>
+            Use a strong password!
+            Format email correctly!
+          </Text>
+        }
+        </View>
 
 
         </View>

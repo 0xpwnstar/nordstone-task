@@ -132,7 +132,7 @@ export default function UploadScreen() {
 
     useEffect(() => {
       listImages();
-    }, []);
+    }, [image]);
 
 
     return (
@@ -154,7 +154,7 @@ export default function UploadScreen() {
           <View style={styles.progressBarContainer}>
             <Progress.Bar progress={transferred} />
           </View>
-        ) : (
+        ) : image && (
           <TouchableOpacity style={styles.uploadButton} onPress={uploadImage}>
             <Text style={styles.buttonText}>Upload image</Text>
           </TouchableOpacity>
