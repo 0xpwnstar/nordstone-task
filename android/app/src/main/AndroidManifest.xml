@@ -17,14 +17,14 @@ android:protectionLevel="signature" />
       android:exported="true"
       android:theme="@style/AppTheme">
       <meta-data  android:name="com.dieam.reactnativepushnotification.notification_channel_name"
-android:value="YOUR NOTIFICATION CHANNEL NAME"/>
-<meta-data  android:name="com.dieam.reactnativepushnotification.notification_channel_description"
-android:value="YOUR NOTIFICATION CHANNEL DESCRIPTION"/>
-<meta-data  android:name="com.dieam.reactnativepushnotification.notification_color"
-android:resource="@android:color/white"/>
-<meta-data  android:name="com.dieam.reactnativepushnotification.notification_foreground" android:value="true"/>
-    <!-- Change the value to false if you don't want the creation of the default channel -->
-    <meta-data  android:name="com.dieam.reactnativepushnotification.channel_create_default"
+      android:value="YOUR NOTIFICATION CHANNEL NAME"/>
+      <meta-data  android:name="com.dieam.reactnativepushnotification.notification_channel_description"
+      android:value="YOUR NOTIFICATION CHANNEL DESCRIPTION"/>
+      <meta-data  android:name="com.dieam.reactnativepushnotification.notification_color"
+      android:resource="@android:color/white"/>
+      <meta-data  android:name="com.dieam.reactnativepushnotification.notification_foreground" android:value="true"/>
+        <!-- Change the value to false if you don't want the creation of the default channel -->
+      <meta-data  android:name="com.dieam.reactnativepushnotification.channel_create_default"
                 android:value="true"/>
 <receiver
 android:name="com.google.android.gms.gcm.GcmReceiver"
@@ -37,6 +37,16 @@ android:permission="com.google.android.c2dm.permission.SEND" >
 </receiver>
 <receiver android:name="com.dieam.reactnativepushnotification.modules.RNPushNotificationPublisher"  />
 <receiver android:name="com.dieam.reactnativepushnotification.modules.RNPushNotificationBootEventReceiver" android:exported="true">
+<meta-data  android:name="com.dieam.reactnativepushnotification.notification_channel_name"
+      android:value="YOUR NOTIFICATION CHANNEL NAME"/>
+      <meta-data  android:name="com.dieam.reactnativepushnotification.notification_channel_description"
+      android:value="YOUR NOTIFICATION CHANNEL DESCRIPTION"/>
+      <meta-data  android:name="com.dieam.reactnativepushnotification.notification_color"
+      android:resource="@android:color/white"/>
+      <meta-data  android:name="com.dieam.reactnativepushnotification.notification_foreground" android:value="true"/>
+        <!-- Change the value to false if you don't want the creation of the default channel -->
+      <meta-data  android:name="com.dieam.reactnativepushnotification.channel_create_default"
+                android:value="true"/>
 <intent-filter>
 <action android:name="android.intent.action.BOOT_COMPLETED" />
 </intent-filter>
@@ -59,6 +69,10 @@ android:exported="true" >
         android:windowSoftInputMode="adjustResize"
         android:exported="true"
         >
+<intent-filter>
+  <action android:name="android.intent.action.MAIN" />
+  <category android:name="android.intent.category.LAUNCHER" />
+</intent-filter>
       </activity>      
     </application>
 </manifest>
